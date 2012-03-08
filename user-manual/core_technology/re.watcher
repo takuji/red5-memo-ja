@@ -1,0 +1,7 @@
+watch("\.re$") do |f|
+  `rake compile`
+end
+
+watch("stylesheets/(.+)\.scss$") do |f|
+  `sass --scss #{f[0]} target/#{f[1]}`
+end

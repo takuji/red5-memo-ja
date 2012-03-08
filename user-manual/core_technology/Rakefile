@@ -1,0 +1,8 @@
+desc "hoge"
+task :compile do
+  `review-compile --target html -a --stylesheet=style.css`
+  `sass --scss stylesheets/style.css.scss target/style.css`
+  Dir.mkdir('target') unless File.exists?('target')
+  `mv -f *.html target`
+end
+
